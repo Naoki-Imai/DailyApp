@@ -1,0 +1,16 @@
+<h2>Create Todo</h2>
+<%= form_for @todo, url: {action: 'create'} do |f| %>
+  <div class="form-group">
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title, class: "form-control", placeholder:"Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, 'Content'  %>
+    <%= f.text_field :content, class: "form-control",placeholder:"Content" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :limit, 'Limit' %>
+    <%= f.date_field :limit, class: "form-control", placeholder:"Limit" %>
+  </div>
+  <%= f.submit "Create", class: "btn btn-primary"%>
+<% end %>

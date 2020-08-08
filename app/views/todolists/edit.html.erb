@@ -1,0 +1,16 @@
+<h2>Create Todo</h2>
+<%= form_for @todo, url: {action: 'update'}, method: :patch do |f| %>
+  <div class="form-group">
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title, class: "form-control", value:"#{@todo.title}" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, 'Content'  %>
+    <%= f.text_field :content, class: "form-control",value:"#{@todo.content}" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :limit, 'Limit' %>
+    <%= f.date_field :limit, class: "form-control", value:"#{@todo.limit}" %>
+  </div>
+  <%= f.submit "update", class: "btn btn-primary"%>
+<% end %>

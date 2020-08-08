@@ -1,0 +1,24 @@
+<h2>All TodoList</h2>
+<div class="row">
+  <% @todos.each do |todo|%>
+    <div class="col-lg-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Title:<%= todo.title %></h3>
+          <div class="buttons">
+            <%= link_to "/#{todo.id}/delete", method: :delete, class: "glyphicon-mark" do %>
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <% end %>
+            <%= link_to "/#{todo.id}/edit", class: "glyphicon-mark" do %>
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            <% end %>
+            
+          </div>
+        </div>
+        <div class="panel-body">Content:<%= todo.content%></div>
+        <div class="panel-footer">Limit:<%= todo.limit %></div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
