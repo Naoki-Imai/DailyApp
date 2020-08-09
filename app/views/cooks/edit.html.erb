@@ -1,0 +1,17 @@
+<h2>Update Recipe From YouTube</h2>
+<%= link_to  "YouTubeを開く", "https://www.youtube.com/", target: "_blank" %>
+<%= form_for @cook, url: {action: 'update'}, method: :patch do |f| %>
+  <div class="form-group">
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title, class: "form-control", value:"#{@cook.title}" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :recipe, 'Recipe'  %>
+    <%= f.text_area :recipe, class: "form-control", size: "20x10",value:"#{@cook.recipe}" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :iframe, 'YouTube' %>
+    <%= f.text_field :iframe, class: "form-control", value:"#{@cook.iframe}" %>
+  </div>
+  <%= f.submit "Update", class: "btn btn-primary"%>
+<% end %>

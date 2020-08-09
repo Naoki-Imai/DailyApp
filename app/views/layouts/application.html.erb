@@ -19,11 +19,16 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to  "TodoApp", "/", class:"navbar-brand" %>
+          <%= link_to  "DailyApp", "/", class:"navbar-brand" %>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to "CookList", "/cooks" %></li>
+            <li><%= link_to "TodoList", "/" %></li>
+          </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Create", "/new" %></li>
+            <li><%= link_to "RecipeAdd", "/cooks/new" %></li>
+            <li><%= link_to "TodoAdd", "/new" %></li>
           </ul>
         </div>
       </div>

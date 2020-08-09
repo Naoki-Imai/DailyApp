@@ -1,0 +1,17 @@
+<h2>Create Recipe From YouTube</h2>
+<%= link_to  "YouTubeを開く", "https://www.youtube.com/", target: "_blank" %>
+<%= form_for @cook, url: {action: 'create'} do |f| %>
+  <div class="form-group">
+    <%= f.label :title, 'Title' %>
+    <%= f.text_field :title, class: "form-control", placeholder:"Title" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :recipe, 'Recipe'  %>
+    <%= f.text_area :recipe, class: "form-control", size: "20x10",placeholder:"Recipe" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :iframe, 'YouTube' %>
+    <%= f.text_field :iframe, class: "form-control", placeholder:"YouTubeURL" %>
+  </div>
+  <%= f.submit "Create", class: "btn btn-primary"%>
+<% end %>

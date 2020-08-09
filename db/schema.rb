@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_121711) do
+ActiveRecord::Schema.define(version: 2020_08_08_071352) do
+
+  create_table "cooks", force: :cascade do |t|
+    t.text "iframe"
+    t.string "title"
+    t.text "recipe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "todos", force: :cascade do |t|
     t.string "title"
