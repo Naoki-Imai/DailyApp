@@ -18,7 +18,9 @@
         <div class="panel-body">
           <iframe width="520" height="315" src="https://www.youtube.com/embed/<%= cook.iframe %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div> 
-        <div class="panel-body"><%= cook.recipe%></div>
+        <div class="panel-footer">
+          <%= link_to  "レシピをみる", "/cooks/#{cook.id}" %>
+        </div>
       </div>
     </div>
   <% end %>

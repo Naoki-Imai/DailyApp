@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   delete '/cooks/:id/delete', to: "cooks#destroy"
   get '/cooks/:id/edit', to: "cooks#edit"
   patch "/cooks/:id/update", to: "cooks#update"
-  get 'cooks/show'
+  get '/cooks/:id', to: "cooks#show"
   root to: 'todolists#index'
   get '/:id/edit', to: 'todolists#edit'
   get '/new', to: 'todolists#new'

@@ -19,10 +19,13 @@ class CooksController < ApplicationController
 
   def update
     @cook = Cook.find(params[:id])
+    @cook.title = params[:cook][:title]
+    @cook.recipe = params[:cook][:recipe]
     iframe_params
     redirect_to "/cooks"
   end
   def show
+    @cook = Cook.find(params[:id])
   end
   def destroy
     cook = Cook.find(params[:id])
