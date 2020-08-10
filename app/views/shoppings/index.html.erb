@@ -1,18 +1,18 @@
 <h2>買い物リスト</h2>
-<table class="table table-bordered">
-  <%= form_tag({controller: :shoppings, action: :destroy}, method: 'delete') do %>
-    <tr>
-      <th>チェック</th>
-      <th>買い物内容</th>
-    </tr>
-    <% @shoppings.each do %>
-      <% @items.each do |item|%>
+<div class="row">
+  <table class="table table-bordered">
+    <%= form_tag({controller: :shoppings, action: :destroy}, method: 'delete') do %>
+      <tr>
+        <th class="col-md-1">チェック</th>
+        <th class="col-md-11">買い物内容</th>
+      </tr>
+      <% @shoppings.each do |shopping| %>
         <tr>
-          <td><%= check_box_tag :delete %></td>
-          <td><%= item %></td>
+          <td><%= check_box_tag "deletes[#{shopping.id}]", shopping.id %></td>
+          <td><%= shopping.thing.gsub("　","") %></td>
         </tr>
       <% end %>
+      <%= submit_tag "削除"%>
     <% end %>
-    <%= submit_tag "削除"%>
-  <% end %>
-</table>
+  </table>
+</div>

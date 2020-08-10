@@ -1,12 +1,12 @@
 class ShoppingsController < ApplicationController
   def index
     @shoppings = Shopping.all
-    @shoppings.each do |shopping|
-      shopping.thing = shopping.thing.gsub("　","")
-      @i = shopping
-      @i.thing = shopping.thing.split(/\R/)
-    end
-    @items = @i.reject(&:blank?)
+    # @shoppings.each do |shopping|
+    #   shopping.thing = shopping.thing.gsub("　","")
+    #   @i = shopping
+    #   @i.thing = shopping.thing.split(/\R/)
+    # end
+    # @items = @i.reject(&:blank?)
   end
 
   def new
@@ -22,11 +22,11 @@ class ShoppingsController < ApplicationController
   end
 
   def destroy
-    checked_data = params[:detele]
+    checked_data = params[:deletes].keys
     if Shopping.destroy(checked_data)
-      redirect_to "/shopping"
+      redirect_to "/shoppings"
     else
-      render "/shopping/index"
+      render "/shoppings/index"
     end
   end
 end
