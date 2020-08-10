@@ -6,7 +6,7 @@
         <div class="panel-heading">
           <h3 class="panel-title">Title:<%= todo.title %></h3>
           <div class="buttons">
-            <%= link_to "/#{todo.id}/delete", method: :delete, class: "glyphicon-mark" do %>
+            <%= link_to "/todo/#{todo.id}/delete", method: :delete, class: "glyphicon-mark", data: {confirm: "削除します。よろしいですか？" } do %>
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             <% end %>
             <%= link_to "/#{todo.id}/edit", class: "glyphicon-mark" do %>

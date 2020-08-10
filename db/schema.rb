@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_08_071352) do
+ActiveRecord::Schema.define(version: 2020_08_10_051433) do
 
   create_table "cooks", force: :cascade do |t|
     t.text "iframe"
     t.string "title"
     t.text "recipe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "how"
+    t.text "url"
+  end
+
+  create_table "shoppings", force: :cascade do |t|
+    t.text "thing"
+    t.string "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

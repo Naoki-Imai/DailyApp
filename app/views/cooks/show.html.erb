@@ -12,6 +12,17 @@
       </div>
       <div class="panel-body">
         <%= simple_format(@cook.recipe) %>
+        <%= link_to  "ShoppingListに入れる", "/cooks/#{@cook.id}/shoppings/new" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">作り方</h3>
+      </div>
+      <div class="panel-body">
+        <%= simple_format(@cook.how) %>
       </div>
     </div>
   </div>

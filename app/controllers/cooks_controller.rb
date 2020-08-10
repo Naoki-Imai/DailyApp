@@ -21,6 +21,7 @@ class CooksController < ApplicationController
     @cook = Cook.find(params[:id])
     @cook.title = params[:cook][:title]
     @cook.recipe = params[:cook][:recipe]
+    @cook.how = params[:cook][:how]
     iframe_params
     redirect_to "/cooks"
   end
@@ -34,10 +35,11 @@ class CooksController < ApplicationController
   end
   private
   def cook_params
-    params.require(:cook).permit(:title, :recipe, :iframe)
+    params.require(:cook).permit(:title, :recipe, :how, :iframe)
   end
 
   def iframe_params
+    @cook.url = params[:cook][:iframe]
     url = params[:cook][:iframe]
     url = url.match(/=(.{11})/)
     url = url[1]

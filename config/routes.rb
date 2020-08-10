@@ -11,5 +11,10 @@ Rails.application.routes.draw do
   get '/new', to: 'todolists#new'
   post '/create', to: 'todolists#create'
   patch "/:id/update", to: "todolists#update"
-  delete '/:id/delete', to: "todolists#destroy"
+  delete '/todo/:id/delete', to: "todolists#destroy"
+
+  get '/shoppings', to: "shoppings#index"
+  get '/cooks/:id/shoppings/new', to: "shoppings#new"
+  post '/cooks/:id/shoppings/create', to: "shoppings#create"
+  delete '/shoppings/delete', to: "shoppings#destroy"
 end

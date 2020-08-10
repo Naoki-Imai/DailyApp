@@ -1,0 +1,18 @@
+<h2>買い物リスト</h2>
+<table class="table table-bordered">
+  <%= form_tag({controller: :shoppings, action: :destroy}, method: 'delete') do %>
+    <tr>
+      <th>チェック</th>
+      <th>買い物内容</th>
+    </tr>
+    <% @shoppings.each do %>
+      <% @items.each do |item|%>
+        <tr>
+          <td><%= check_box_tag :delete %></td>
+          <td><%= item %></td>
+        </tr>
+      <% end %>
+    <% end %>
+    <%= submit_tag "削除"%>
+  <% end %>
+</table>

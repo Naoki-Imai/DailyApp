@@ -10,8 +10,12 @@
     <%= f.text_area :recipe, class: "form-control", size: "20x10",value:"#{@cook.recipe}" %>
   </div>
   <div class="form-group">
+    <%= f.label :how, 'How'  %>
+    <%= f.text_area :how, class: "form-control", size: "20x10",value:"#{@cook.how}" %>
+  </div>
+  <div class="form-group">
     <%= f.label :iframe, 'YouTube' %>
-    <%= f.text_field :iframe, class: "form-control", value:"#{@cook.iframe}" %>
+    <%= f.text_field :iframe, class: "form-control", value:"#{@cook.url}" %>
   </div>
   <%= f.submit "Update", class: "btn btn-primary"%>
 <% end %>
