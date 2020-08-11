@@ -14,6 +14,19 @@ class ShoppingsController < ApplicationController
     @shopping = Shopping.new
   end
 
+  def addshopping
+    @shopping = Shopping.new
+  end
+
+  def createshopping
+    @shopping = Shopping.new(shopping_params)
+    if @shopping.save
+      redirect_to "/shoppings"
+    else
+      render "/shoppings/new"
+    end
+  end
+
   def create
     @cook = Cook.find(params[:id])
     @shopping = Shopping.new(thing: "#{@cook.recipe}", place: params[:place])
@@ -29,4 +42,10 @@ class ShoppingsController < ApplicationController
       render "/shoppings/index"
     end
   end
+
+  private
+  def shopping_params
+    params.require(:shopping).permit(:thing, :place)
+  end
+
 end

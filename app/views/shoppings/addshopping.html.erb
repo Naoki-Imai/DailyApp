@@ -1,0 +1,12 @@
+<h2>Create Shopping List</h2>
+<%= form_for @shopping, url: {action: 'createshopping'} do |f| %>
+  <div class="form-group">
+    <%= f.label :thing, '買い物リスト'  %>
+    <%= f.text_area :thing, class: "form-control", size: "20x10", placeholder: "買い物リスト" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :place, '場所' %>
+    <%= f.text_field :place, class: "form-control", placeholder:"場所" %>
+  </div>
+  <%= f.submit "Create", class: "btn btn-primary"%>
+<% end %>

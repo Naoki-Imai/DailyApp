@@ -9,7 +9,7 @@
       <% @shoppings.each do |shopping| %>
         <tr>
           <td><%= check_box_tag "deletes[#{shopping.id}]", shopping.id %></td>
-          <td><%= shopping.thing.gsub("　","") %></td>
+          <td><%= simple_format(shopping.thing.gsub("　","")) %></td>
         </tr>
       <% end %>
       <%= submit_tag "削除"%>
