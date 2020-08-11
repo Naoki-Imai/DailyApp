@@ -1,6 +1,15 @@
+require 'csv'
+
 class CooksController < ApplicationController
   def index
     @cooks = Cook.all
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_cooks_csv(@cooks)
+      end
+    end
+
   end
 
   def new
@@ -45,5 +54,24 @@ class CooksController < ApplicationController
     url = url[1]
     @cook.iframe = url
     @cook.save
+  end
+
+  def send_cooks_csv(cooks)
+    csv_data = CSV.generate do |csv|
+      csv_column_names = %w(title recipe url updated_at)
+      csv << csv_column_names
+
+      cooks.each do |cook|
+        cook.recipe = cook.recipe.gsub("　","")
+        column_values = [
+          cook.title,
+          cook.recipe,
+          cook.url,
+          cook.updated_at
+        ]
+        csv << column_values
+      end
+    end
+    send_data(csv_data, filename: "cooks.csv")
   end
 end
