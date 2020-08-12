@@ -23,3 +23,62 @@
 .recipe_title {
   margin-bottom: 30px;
 }
+.navbar {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+.container {
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 991px){
+  .navbar-header {
+    float: none;
+  }
+  .container-fluid {
+    padding: 0;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      background-color: #f8f8f8;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin: 7.5px -15px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding: 10px 0 10px 0;
+  }
+  .navbar-text {
+      float: none;
+      margin: 15px 0;
+  }
+  /* since 3.1.0 */
+  .navbar-collapse.collapse.in { 
+      display: block!important;
+  }
+  .collapsing {
+      overflow: hidden!important;
+  }
+  .navbar {
+    height: 100px;
+    .navbar-nav > li > a,.navbar-brand  {
+      line-height: 60px;
+      font-size: 30px;
+    }
+  }
+  .container {
+    padding-top: 100px;
+    z-index: 0;
+  }
+}
